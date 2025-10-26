@@ -21,14 +21,14 @@
 export function twoSum(nums: number[], target: number): number[] {
   const map: Map<number, number> = new Map();
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length; i += 1) {
     if (nums[i] !== undefined) {
-      map.set(nums[i]!, i); // 例: map.set(2, 0)
+      map.set(nums[i], i); // 例: map.set(2, 0)
     }
   }
 
-  for (let i = 0; i < nums.length; i++) {
-    const complement = target - nums[i]!; // 例: target=9, nums[i]=2 → complement=7
+  for (let i = 0; i < nums.length; i += 1) {
+    const complement = target - nums[i]; // 例: target=9, nums[i]=2 → complement=7
     if (map.has(complement) && map.get(complement) !== i) {
       return [i, map.get(complement)!]; // 例: map.get(7) → 1 を返す
     }
